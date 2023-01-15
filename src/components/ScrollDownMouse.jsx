@@ -134,9 +134,9 @@ const ArrowWrapper = styled.div`
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
     border-right: 2px solid
-      ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+      ${({ theme, isDark }) => (!isDark ? theme.white : theme.primary)};
     border-bottom: 2px solid
-      ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+      ${({ theme, isDark }) => (!isDark ? theme.white : theme.primary)};
     margin: 0 0 3px 4px;
 
     width: 16px;
@@ -193,7 +193,7 @@ const MouseWrapper = styled.div`
   border-radius: 14px;
   transform: none;
   border: 2px solid
-    ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+    ${({ theme, isDark }) => (!isDark ? theme.white : theme.primary)};
   top: 170px;
   .wheel {
     height: 5px;
@@ -201,13 +201,13 @@ const MouseWrapper = styled.div`
     display: block;
     margin: 5px auto;
     background: ${({ theme, isDark }) =>
-      isDark ? theme.white : theme.primary};
+      !isDark ? theme.white : theme.primary};
     position: relative;
 
     height: 4px;
     width: 4px;
     border: 2px solid
-      ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+      ${({ theme, isDark }) => (!isDark ? theme.white : theme.primary)};
     -webkit-border-radius: 8px;
     border-radius: 8px;
   }

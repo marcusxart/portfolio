@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
+import ThemeContext from "../../../Context/ThemeContext";
 import { Button } from "../../../components/common";
 import ScrollDownMouse from "../../../components/ScrollDownMouse";
 import { titleAmin, defaultSection, fade } from "../../../config/animation";
+import { Wave } from "../../../assets/svg";
 import config from "../../../config/scroll";
 
 const Container = styled(motion.section)`
   height: 100vh;
+  overflow: hidden;
   width: 100%;
   position: relative;
   display: flex;
@@ -95,6 +98,7 @@ const Footer = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 3;
   height: fit-content;
   display: flex;
   justify-content: center;
@@ -104,9 +108,34 @@ const Hide = styled.div`
   overflow: hidden;
 `;
 
+const WaveBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -50vh;
+  overflow: hidden;
+  svg {
+    fill: ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+    width: 100%;
+  }
+  @media screen and (max-width: 900px) {
+    svg {
+      transform: scale(2.5) translateX(-150px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    svg {
+      transform: scale(4) translateX(-100px);
+    }
+  }
+`;
+
 const Opacity = styled(motion.div)``;
 
 const Hero = () => {
+  const { isDark } = useContext(ThemeContext);
   return (
     <Container
       variants={defaultSection}
@@ -137,6 +166,9 @@ const Hero = () => {
       <Footer>
         <ScrollDownMouse />
       </Footer>
+      <WaveBox isDark={isDark}>
+        <Wave />
+      </WaveBox>
     </Container>
   );
 };

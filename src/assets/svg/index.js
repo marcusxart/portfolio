@@ -18,9 +18,11 @@ import Return from "./Return";
 import Whatsapp from "./Whatsapp";
 import Linkedin from "./Linkedin";
 import Email from "./Email";
+import Wave from "./Wave";
 
 export {
   ArrowDown,
+  Wave,
   Return,
   Html,
   Css,

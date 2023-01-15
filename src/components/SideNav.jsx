@@ -12,7 +12,7 @@ const Container = styled.div`
   z-index: 100;
   width: 4rem;
   right: 4vw;
-  top: calc(50% + 12vh);
+  top: 50%;
   transform: translateY(-50%);
   display: block;
 

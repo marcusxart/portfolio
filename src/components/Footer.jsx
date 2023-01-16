@@ -41,7 +41,7 @@ const Footer = () => {
         <Links>
           <li>
             <a
-              href="https://www.linkedin.com/in/chinonso-emerenwa-111b4a23a/"
+              href="https://www.linkedin.com/in/chinonso-emerenwa"
               target="_blank"
             >
               Linkedin

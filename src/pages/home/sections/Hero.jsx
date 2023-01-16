@@ -116,7 +116,8 @@ const WaveBox = styled.div`
   bottom: -50vh;
   overflow: hidden;
   svg {
-    fill: ${({ theme, isDark }) => (isDark ? theme.white : theme.primary)};
+    fill: ${({ theme, isDark }) =>
+      isDark ? theme.textGradient : theme.primary};
     width: 100%;
   }
   @media screen and (max-width: 900px) {
